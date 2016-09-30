@@ -1,0 +1,30 @@
+$bg: #FF405F;
+
+body {
+  font-family: Arial, helvetica, sans-serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  background: $bg;
+  text-align: center;
+  padding: 300px 0;
+  color: #fff;
+
+  a {
+    color: rgba(#FFF, .8);
+    text-decoration: none;
+    font-weight: bold;
+
+    &:hover {
+      color: #FFF;
+    }
+  }
+
+  p > span {
+    margin: 0 10px;
+    display: inline-block;
+  }
+}

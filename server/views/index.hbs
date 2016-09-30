@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>{{title}}</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {{#metas}}
+    <meta name="{{name}}" content="{{content}}">
+      {{#repeat_with_prefix}}
+    <meta name="{{.}}{{name}}" content="{{content}}">
+      {{/repeat_with_prefix}}
+    {{/metas}}
+  </head>
+  <body>
+    <header>
+      <h1>Express Server with webpack hot realoding</h1>
+      <p>
+        <a href="https://github.com/vinpac/express-webpack-hot-server">Github</a>
+        <span>.</span>
+        <a href="https://github.com">Author</a>
+      </p>
+    </header>
+  </body>
+</html>
