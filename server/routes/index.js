@@ -11,12 +11,12 @@ module.exports = function() {
   router
     .get('/profile', renderApp({
       title: 'Profile',
+      jsonToClient: JSON.stringify({ user: { id: 1, name: 'John'}}),
       metas: [
         { name: 'name', content: 'Profile 1' }
       ]
     }))
-
-    .use(renderApp({
+    .get('/', renderApp({
       title: 'Home',
       metas: [
         {

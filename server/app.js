@@ -17,8 +17,6 @@ if (config.globals.__DEV__) {
   require('./lib/setupWebpackServer')(app)
 }
 
-app.use('/', require('./routes/index')())
-
 // set favicon
 // app.use(favicon(paths.public('favicon.png')));
 
@@ -33,6 +31,20 @@ app.set('views', paths.build('views'))
 // Disable caching on no-production
 if (!config.globals.__PROD__) {
   app.set('view cache', false)
+  app.use(express.static(paths.public()))
+} else {
+  app.use(express.static(paths.public(), { maxAge: 2592000000 }))
 }
+
+app.use('/', require('./routes')())
+app.use(function(err, req, res, next) {
+  res.status(err.status || 500);
+  res.render('index', {
+    jsonToClient: JSON.stringify({
+      message: err.message,
+      error: err
+    })
+  });
+})
 
 module.exports = app

@@ -10,6 +10,11 @@
         <meta name="{{.}}{{name}}" content="{{content}}">
       {{/repeat_with_prefix}}
     {{/metas}}
+    {{#jsonToClient}}
+      <script>
+        window.INITIAL_STATE = {{{jsonToClient}}};
+      </script>
+    {{/jsonToClient}}
   </head>
   <body>
     <header>
