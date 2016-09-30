@@ -2,13 +2,12 @@
 <html lang="pt-br">
   <head>
     <title>{{title}}</title>
-
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     {{#metas}}
-    <meta name="{{name}}" content="{{content}}">
+      <meta name="{{name}}" content="{{content}}">
       {{#repeat_with_prefix}}
-    <meta name="{{.}}{{name}}" content="{{content}}">
+        <meta name="{{.}}{{name}}" content="{{content}}">
       {{/repeat_with_prefix}}
     {{/metas}}
   </head>

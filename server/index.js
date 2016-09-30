@@ -19,5 +19,7 @@ server.on('listening', function() {
   console.log('The app is running at:')
   console.log('\n\t' + chalk.cyan(server_url) + '\n')
   console.log('Note that the development build is not optimized.')
-  openBrowser(server_url)
+  if (config.server_open_browser) {
+    openBrowser(server_url)
+  }
 })
