@@ -1,5 +1,5 @@
 {
-  "name": "atados-www",
+  "name": "express-webpack-hot-server",
   "devDependencies": {
     "autoprefixer": "^6.5.0",
     "babel-core": "^6.16.0",
